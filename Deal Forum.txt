@@ -1,0 +1,2 @@
+
+dotnet ef dbcontext scaffold "Server=192.168.43.91;Database=DealForum;Trusted_Connection=True;Integrated Security=False;uid=sa;pwd=Kaushal#123;MultipleActiveResultSets=True" Microsoft.EntityFrameworkCore.SqlServer -c DealForumlocalContext -o DB --data-annotations
