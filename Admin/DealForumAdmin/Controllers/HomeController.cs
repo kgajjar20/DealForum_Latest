@@ -25,6 +25,13 @@ namespace DealForumAdmin.Controllers
             return View();
         }
 
+        #region Refresh Notification
+        public ActionResult RefreshNotification()
+        {
+            return PartialView("_Notifications");
+        }
+
+        #endregion
 
         [AllowAnonymous]
         [HttpGet]

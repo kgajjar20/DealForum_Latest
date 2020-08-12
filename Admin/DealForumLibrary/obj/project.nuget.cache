@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "kJQbcBTvl67zK9hhxgdLAHe5i8ubf2Yx9z9d6HNDLBs/AxUcAw8v9nivZBeiVstu7JnuiWwetz5JAx7AZjSUxw==",
+  "dgSpecHash": "SF3fN8Jl3T+F9uD4QoGNSysHffCr6//zd2pCwwnPLgbn5U9QpjvdlDlb8SkEhT6u6fwhh4uSCjWnVWILW4HXNw==",
   "success": true,
   "projectFilePath": "D:\\Web Development\\Projects\\DealForum\\Admin\\DealForumLibrary\\DealForumLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KG-PC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\KG-PC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\KG-PC\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\KG-PC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\KG-PC\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\KG-PC\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\KG-PC\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -22,7 +22,10 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!--other-->
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+
+    <!-- Custom -->
+    <link href="@Url.Content("~/css/Custom/stickynotes.css")" rel="stylesheet" />
 </head>
 
 <body class="sidebar-mini layout-navbar-fixed" style="height: auto;">
@@ -161,13 +164,15 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-         @RenderBody()       
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+            @RenderBody()
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
     </div>
+
     <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="@Url.Content("~/AdminLTE/plugins/jquery/jquery.min.js")"></script>
@@ -192,6 +197,13 @@
     <script src="@Url.Content("~/AdminLTE/dist/js/adminlte.js")"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <!-- AdminLTE for demo purposes -->
+    <!-- Custom-->
+    <script src="@Url.Content("~/js/Custom/stickynotes.js")"></script>
+    <script src="@Url.Content("~/js/Custom/Common.js")"></script>
+
+    <div id="_NotificationShare">
+        <partial name="_Notifications" />
+    </div>
 </body>
 </html>
 

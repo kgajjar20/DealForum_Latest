@@ -8,6 +8,13 @@ namespace DealForumAPI.DB
     [Table("user")]
     public partial class User
     {
+        public User()
+        {
+            Apiactiontracking = new HashSet<Apiactiontracking>();
+            Apiexceptiontracking = new HashSet<Apiexceptiontracking>();
+            Usermapping = new HashSet<Usermapping>();
+        }
+
         [Key]
         [Column("id")]
         public Guid Id { get; set; }
@@ -16,11 +23,12 @@ namespace DealForumAPI.DB
         [StringLength(500)]
         public string Email { get; set; }
         [Required]
-        [Column("password")]
-        [StringLength(100)]
-        public string Password { get; set; }
+        [Column("passwordhash")]
+        public string Passwordhash { get; set; }
+        [Required]
+        [Column("passwordsalt")]
+        public string Passwordsalt { get; set; }
         [Column("emailverificationlink")]
-        [StringLength(10)]
         public string Emailverificationlink { get; set; }
         [Column("emailverified")]
         public bool Emailverified { get; set; }
@@ -33,6 +41,7 @@ namespace DealForumAPI.DB
         [Column("middlename")]
         [StringLength(200)]
         public string Middlename { get; set; }
+        [Required]
         [Column("lastname")]
         [StringLength(200)]
         public string Lastname { get; set; }
@@ -52,5 +61,12 @@ namespace DealForumAPI.DB
         public Guid? Modifiedby { get; set; }
         [Column("modifieddate", TypeName = "datetime")]
         public DateTime? Modifieddate { get; set; }
+
+        [InverseProperty("User")]
+        public virtual ICollection<Apiactiontracking> Apiactiontracking { get; set; }
+        [InverseProperty("User")]
+        public virtual ICollection<Apiexceptiontracking> Apiexceptiontracking { get; set; }
+        [InverseProperty("User")]
+        public virtual ICollection<Usermapping> Usermapping { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace DealForumAPI.DB
         public Role()
         {
             Roleprivilege = new HashSet<Roleprivilege>();
+            Usermapping = new HashSet<Usermapping>();
         }
 
         [Key]
@@ -37,5 +38,7 @@ namespace DealForumAPI.DB
 
         [InverseProperty("Role")]
         public virtual ICollection<Roleprivilege> Roleprivilege { get; set; }
+        [InverseProperty("Role")]
+        public virtual ICollection<Usermapping> Usermapping { get; set; }
     }
 }

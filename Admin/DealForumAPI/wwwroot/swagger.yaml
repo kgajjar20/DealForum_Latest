@@ -1,0 +1,926 @@
+info:
+  title: REST API Example
+  description: REST API Versions
+  version: 1.0
+servers: []
+paths:
+  /AuthenticationApi:
+    operations:
+      Post:
+        tags:
+        - name: AuthenticationApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AdminLoginModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AdminLoginModel'
+                  referenceV2: '#/definitions/AdminLoginModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AdminLoginModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AdminLoginModel'
+                  referenceV2: '#/definitions/AdminLoginModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AdminLoginModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AdminLoginModel'
+                  referenceV2: '#/definitions/AdminLoginModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AdminLoginModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AdminLoginModel'
+                  referenceV2: '#/definitions/AdminLoginModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /api/Test:
+    operations:
+      Get:
+        tags:
+        - name: Test
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content:
+              text/plain:
+                schema:
+                  type: array
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  items:
+                    type: string
+                    allOf: []
+                    oneOf: []
+                    anyOf: []
+                    required: []
+                    properties: {}
+                    additionalPropertiesAllowed: true
+                    enum: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              application/json:
+                schema:
+                  type: array
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  items:
+                    type: string
+                    allOf: []
+                    oneOf: []
+                    anyOf: []
+                    required: []
+                    properties: {}
+                    additionalPropertiesAllowed: true
+                    enum: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              text/json:
+                schema:
+                  type: array
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  items:
+                    type: string
+                    allOf: []
+                    oneOf: []
+                    anyOf: []
+                    required: []
+                    properties: {}
+                    additionalPropertiesAllowed: true
+                    enum: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Post:
+        tags:
+        - name: Test
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /api/Test/{id}:
+    operations:
+      Get:
+        tags:
+        - name: Test
+        parameters:
+        - name: id
+          in: Path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content:
+              text/plain:
+                schema:
+                  type: string
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              application/json:
+                schema:
+                  type: string
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              text/json:
+                schema:
+                  type: string
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Put:
+        tags:
+        - name: Test
+        parameters:
+        - name: id
+          in: Path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Delete:
+        tags:
+        - name: Test
+        parameters:
+        - name: id
+          in: Path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /api/Values:
+    operations:
+      Get:
+        tags:
+        - name: Values
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content:
+              text/plain:
+                schema:
+                  type: array
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  items:
+                    type: string
+                    allOf: []
+                    oneOf: []
+                    anyOf: []
+                    required: []
+                    properties: {}
+                    additionalPropertiesAllowed: true
+                    enum: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              application/json:
+                schema:
+                  type: array
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  items:
+                    type: string
+                    allOf: []
+                    oneOf: []
+                    anyOf: []
+                    required: []
+                    properties: {}
+                    additionalPropertiesAllowed: true
+                    enum: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              text/json:
+                schema:
+                  type: array
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  items:
+                    type: string
+                    allOf: []
+                    oneOf: []
+                    anyOf: []
+                    required: []
+                    properties: {}
+                    additionalPropertiesAllowed: true
+                    enum: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Post:
+        tags:
+        - name: Values
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /api/Values/{id}:
+    operations:
+      Get:
+        tags:
+        - name: Values
+        parameters:
+        - name: id
+          in: Path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content:
+              text/plain:
+                schema:
+                  type: string
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              application/json:
+                schema:
+                  type: string
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+              text/json:
+                schema:
+                  type: string
+                  allOf: []
+                  oneOf: []
+                  anyOf: []
+                  required: []
+                  properties: {}
+                  additionalPropertiesAllowed: true
+                  enum: []
+                examples: {}
+                encoding: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Put:
+        tags:
+        - name: Values
+        parameters:
+        - name: id
+          in: Path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: string
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Delete:
+        tags:
+        - name: Values
+        parameters:
+        - name: id
+          in: Path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+components:
+  schemas:
+    AdminLoginModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - email
+      - password
+      properties:
+        email:
+          type: string
+          format: email
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        password:
+          type: string
+          format: password
+          maxLength: 100
+          minLength: 5
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+  responses: {}
+  parameters: {}
+  examples: {}
+  requestBodies: {}
+  headers: {}
+  securitySchemes: {}
+  links: {}
+  callbacks: {}
+securityRequirements: []
+tags: []
+

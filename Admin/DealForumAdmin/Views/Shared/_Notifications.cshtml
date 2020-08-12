@@ -1,0 +1,121 @@
+﻿<script>
+    $(document).ready(function ()
+    {
+        @using DealForum.Common
+        @using DealForumLibrary.EnumHelper
+        @{
+            var errorList = Html.GetNotifications(NotificationType.ERROR);
+            var warningList = Html.GetNotifications(NotificationType.WARNING);
+            var successList = Html.GetNotifications(NotificationType.SUCCESS);
+            var infoList = Html.GetNotifications(NotificationType.INFO);
+            string message = string.Empty;
+            int NotificationDisplayType =0;
+
+
+            if (errorList != null)
+            {
+                if (errorList.Count() > 1)
+                {
+                    message += "There are " + errorList.Count() + " errors :";
+                    message += "<ul>";
+
+                    foreach (string msg in errorList)
+                    {
+                        message += "<li>" + Html.Raw(msg) + "</li>";
+                    }
+
+                    message += "</ul>";
+
+                }
+                else
+                {
+                    message = Convert.ToString(Html.Raw(errorList.First()));
+                }
+                NotificationDisplayType = (int)EnumHelper.NotificationErrorCode.Error;
+            }
+
+            if (warningList != null)
+            {
+                if (warningList.Count() > 1)
+                {
+                    message += "There are " + warningList.Count() + " warnings :";
+                    message += "<ul>";
+
+                    foreach (string msg in warningList)
+                    {
+                        message += "<li>" + Html.Raw(msg) + "</li>";
+                    }
+
+                    message += "</ul>";
+
+                }
+                else
+                {
+                    message = Convert.ToString(Html.Raw(warningList.First()));
+                }
+                NotificationDisplayType = (int)EnumHelper.NotificationErrorCode.InValid;
+            }
+
+            if (infoList != null)
+            {
+                if (infoList.Count() > 1)
+                {
+                    message += "There are " + infoList.Count() + " notifications :";
+                    message += "<ul>";
+
+                    foreach (string msg in infoList)
+                    {
+                        message += "<li>" + Html.Raw(msg) + "</li>";
+                    }
+
+                    message += "</ul>";
+
+                }
+                else
+                {
+                    message = Convert.ToString(Html.Raw(infoList.First()));
+                }
+                NotificationDisplayType = (int)EnumHelper.NotificationErrorCode.Mismatch;
+            }
+
+            if (successList != null)
+            {
+                if (successList.Count() > 1)
+                {
+                    message += "There are " + successList.Count() + " success notifications :";
+                    message += "<ul>";
+
+                    foreach (string msg in successList)
+                    {
+                        message += "<li>" + Html.Raw(msg) + "</li>";
+                    }
+
+                    message += "</ul>";
+
+                }
+                else
+                {
+                    message = Convert.ToString(Html.Raw(successList.First()));
+                }
+                NotificationDisplayType = (int)EnumHelper.NotificationErrorCode.Success;
+            }
+            }
+        ShowHideNotification('@message',@NotificationDisplayType);
+    });
+
+    function ShowHideNotification(message,NotificationType) {
+        if (NotificationType == 1)
+        {
+            success(message);
+        }
+        else if(NotificationType==500){
+            error(message);
+        }
+        else if(NotificationType==3){
+            info(message);
+        }
+       else if(NotificationType==2){
+            warning(message);
+        }
+    }
+</script>
