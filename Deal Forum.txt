@@ -1,3 +1,8 @@
 
 
 dotnet ef dbcontext scaffold "Server=192.168.43.91;Database=DealForum;Trusted_Connection=True;Integrated Security=False;uid=sa;pwd=Kaushal#123;MultipleActiveResultSets=True" Microsoft.EntityFrameworkCore.SqlServer -c DealForumContext -o DB --data-annotations
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Remain things Notes :
+1) Search button in search text box
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/26275149/how-to-load-all-images-from-a-url

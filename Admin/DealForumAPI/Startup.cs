@@ -65,7 +65,13 @@ namespace DealForumAPI
             services.AddScoped<IException, ExceptionTracking>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddScoped<IAdminLogin,AdminLoginRepository>();
+            services.AddScoped<IAdminLogin, AdminLoginRepository>();
+            services.AddScoped<IAdminRole, AdminRoleRepository>();
+            services.AddScoped<IAdminStore, AdminStoreRepository>();
+            services.AddScoped<ICategory, CategoryRepository>();
+            services.AddScoped<ICoupon, CouponRepository>();
+            services.AddScoped<IDeal, DealRepository>();
+            services.AddScoped<IAdminForum, AdminForumRepository>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
            .AddJwtBearer(Options =>
@@ -102,8 +108,7 @@ namespace DealForumAPI
 
             app.UseSwaggerDocuments();
             app.UseHttpsRedirection();
-            
-            app.UseAuthorization();
+
 
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions

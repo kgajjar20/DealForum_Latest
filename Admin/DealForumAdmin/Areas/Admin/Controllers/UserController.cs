@@ -6,12 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DealForum.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class UserController : Controller
     {
-        [Area("Admin")]
         public IActionResult Index()
         {
             return View();
         }
+
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
+
     }
 }

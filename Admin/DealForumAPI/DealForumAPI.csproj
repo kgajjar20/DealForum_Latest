@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DealForumAdmin\DealForum.csproj" />
     <ProjectReference Include="..\DealForumLibrary\DealForumLibrary.csproj" />
   </ItemGroup>
 

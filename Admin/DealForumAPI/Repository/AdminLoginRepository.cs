@@ -7,15 +7,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static DealForumLibrary.Common.Common;
-using static DealForumLibrary.EnumHelper.EnumHelper;
+using static DealForumLibrary.Common;
+using static DealForumLibrary.EnumHelper;
 
 namespace DealForumAPI.Repository
 {
 
     public class AdminLoginRepository : IAdminLogin
     {
-        DealForumContext _context;
+       private DealForumContext _context;
         public AdminLoginRepository(DealForumContext context)
         {
             _context = context;
@@ -47,7 +47,8 @@ namespace DealForumAPI.Repository
                                              Id = x.Id,
                                              Middlename = x.Middlename ?? string.Empty,
                                              Status = x.Status,
-                                             CreatedDate = y.Createddate
+                                             CreatedDate = y.Createddate,
+                                             ProfilePhoto = x.Profilephoto
                                          }).FirstOrDefaultAsync();
 
             return adminPortalUser;

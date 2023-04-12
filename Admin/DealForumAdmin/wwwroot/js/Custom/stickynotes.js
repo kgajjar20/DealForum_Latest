@@ -1,4 +1,4 @@
-﻿debugger;
+﻿
 window.error = function (msg) {
     var dom = '<div class="top-alert"><div class="alert alert-danger alert-dismissible fade in alertopacity" role="alert"><i class="fa fa-exclamation" aria-hidden="true"></i> ' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div></div>';
     var jdom = $(dom);

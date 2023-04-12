@@ -45,6 +45,9 @@ namespace DealForumAPI.DB
         [Column("lastname")]
         [StringLength(200)]
         public string Lastname { get; set; }
+        [Column("profilephoto")]
+        [StringLength(2000)]
+        public string Profilephoto { get; set; }
         [Column("gender")]
         public int? Gender { get; set; }
         [Column("birthdate", TypeName = "datetime")]

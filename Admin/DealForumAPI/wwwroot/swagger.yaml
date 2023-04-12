@@ -4,11 +4,11 @@ info:
   version: 1.0
 servers: []
 paths:
-  /AuthenticationApi:
+  /AdminAuthenticationApi:
     operations:
       Post:
         tags:
-        - name: AuthenticationApi
+        - name: AdminAuthenticationApi
         parameters:
         - name: api-version
           in: Query
@@ -92,6 +92,2425 @@ paths:
                   isLocal: true
                   referenceV3: '#/components/schemas/AdminLoginModel'
                   referenceV2: '#/definitions/AdminLoginModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminForumApi/ForumsListGet:
+    operations:
+      Post:
+        tags:
+        - name: AdminForumApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumModel'
+                  referenceV2: '#/definitions/ForumModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumModel'
+                  referenceV2: '#/definitions/ForumModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumModel'
+                  referenceV2: '#/definitions/ForumModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumModel'
+                  referenceV2: '#/definitions/ForumModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Get:
+        tags:
+        - name: AdminForumApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminForumApi/ForumGet:
+    operations:
+      Post:
+        tags:
+        - name: AdminForumApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminForumApi:
+    operations:
+      Post:
+        tags:
+        - name: AdminForumApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditForumDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditForumDetail'
+                  referenceV2: '#/definitions/AddEditForumDetail'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditForumDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditForumDetail'
+                  referenceV2: '#/definitions/AddEditForumDetail'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditForumDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditForumDetail'
+                  referenceV2: '#/definitions/AddEditForumDetail'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditForumDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditForumDetail'
+                  referenceV2: '#/definitions/AddEditForumDetail'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminForumApi/ChangeStatus:
+    operations:
+      Post:
+        tags:
+        - name: AdminForumApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumStatusModel'
+                  referenceV2: '#/definitions/ForumStatusModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumStatusModel'
+                  referenceV2: '#/definitions/ForumStatusModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumStatusModel'
+                  referenceV2: '#/definitions/ForumStatusModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: ForumStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/ForumStatusModel'
+                  referenceV2: '#/definitions/ForumStatusModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminForumApi/DeleteForum:
+    operations:
+      Post:
+        tags:
+        - name: AdminForumApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: string
+                format: uuid
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminRoleApi/RolesListGet:
+    operations:
+      Post:
+        tags:
+        - name: AdminRoleApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleModel'
+                  referenceV2: '#/definitions/RoleModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleModel'
+                  referenceV2: '#/definitions/RoleModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleModel'
+                  referenceV2: '#/definitions/RoleModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleModel'
+                  referenceV2: '#/definitions/RoleModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminRoleApi/RoleGet:
+    operations:
+      Post:
+        tags:
+        - name: AdminRoleApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminRoleApi:
+    operations:
+      Post:
+        tags:
+        - name: AdminRoleApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditRoleDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditRoleDetail'
+                  referenceV2: '#/definitions/AddEditRoleDetail'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditRoleDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditRoleDetail'
+                  referenceV2: '#/definitions/AddEditRoleDetail'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditRoleDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditRoleDetail'
+                  referenceV2: '#/definitions/AddEditRoleDetail'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditRoleDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditRoleDetail'
+                  referenceV2: '#/definitions/AddEditRoleDetail'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminRoleApi/ChangeStatus:
+    operations:
+      Post:
+        tags:
+        - name: AdminRoleApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleStatusModel'
+                  referenceV2: '#/definitions/RoleStatusModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleStatusModel'
+                  referenceV2: '#/definitions/RoleStatusModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleStatusModel'
+                  referenceV2: '#/definitions/RoleStatusModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: RoleStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/RoleStatusModel'
+                  referenceV2: '#/definitions/RoleStatusModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminRoleApi/DeleteRole:
+    operations:
+      Post:
+        tags:
+        - name: AdminRoleApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminStoreApi:
+    operations:
+      Post:
+        tags:
+        - name: AdminStoreApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditStoreDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditStoreDetail'
+                  referenceV2: '#/definitions/AddEditStoreDetail'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditStoreDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditStoreDetail'
+                  referenceV2: '#/definitions/AddEditStoreDetail'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditStoreDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditStoreDetail'
+                  referenceV2: '#/definitions/AddEditStoreDetail'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditStoreDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditStoreDetail'
+                  referenceV2: '#/definitions/AddEditStoreDetail'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminStoreApi/StoreListGet:
+    operations:
+      Post:
+        tags:
+        - name: AdminStoreApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreModel'
+                  referenceV2: '#/definitions/StoreModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreModel'
+                  referenceV2: '#/definitions/StoreModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreModel'
+                  referenceV2: '#/definitions/StoreModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreModel'
+                  referenceV2: '#/definitions/StoreModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+      Get:
+        tags:
+        - name: AdminStoreApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminStoreApi/ChangeStatus:
+    operations:
+      Post:
+        tags:
+        - name: AdminStoreApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreStatusModel'
+                  referenceV2: '#/definitions/StoreStatusModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreStatusModel'
+                  referenceV2: '#/definitions/StoreStatusModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreStatusModel'
+                  referenceV2: '#/definitions/StoreStatusModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: StoreStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/StoreStatusModel'
+                  referenceV2: '#/definitions/StoreStatusModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminStoreApi/DeleteStore:
+    operations:
+      Post:
+        tags:
+        - name: AdminStoreApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /AdminStoreApi/StoreGet:
+    operations:
+      Post:
+        tags:
+        - name: AdminStoreApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CategoryApi:
+    operations:
+      Post:
+        tags:
+        - name: CategoryApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCategoryDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCategoryDetail'
+                  referenceV2: '#/definitions/AddEditCategoryDetail'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCategoryDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCategoryDetail'
+                  referenceV2: '#/definitions/AddEditCategoryDetail'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCategoryDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCategoryDetail'
+                  referenceV2: '#/definitions/AddEditCategoryDetail'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCategoryDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCategoryDetail'
+                  referenceV2: '#/definitions/AddEditCategoryDetail'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CategoryApi/CategoryListGet:
+    operations:
+      Post:
+        tags:
+        - name: CategoryApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryModel'
+                  referenceV2: '#/definitions/CategoryModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryModel'
+                  referenceV2: '#/definitions/CategoryModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryModel'
+                  referenceV2: '#/definitions/CategoryModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryModel'
+                  referenceV2: '#/definitions/CategoryModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CategoryApi/ChangeStatus:
+    operations:
+      Post:
+        tags:
+        - name: CategoryApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryStatusModel'
+                  referenceV2: '#/definitions/CategoryStatusModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryStatusModel'
+                  referenceV2: '#/definitions/CategoryStatusModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryStatusModel'
+                  referenceV2: '#/definitions/CategoryStatusModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CategoryStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CategoryStatusModel'
+                  referenceV2: '#/definitions/CategoryStatusModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CategoryApi/DeleteCategory:
+    operations:
+      Post:
+        tags:
+        - name: CategoryApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CategoryApi/CategoryGet:
+    operations:
+      Post:
+        tags:
+        - name: CategoryApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CouponApi:
+    operations:
+      Post:
+        tags:
+        - name: CouponApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCouponDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCouponDetail'
+                  referenceV2: '#/definitions/AddEditCouponDetail'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCouponDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCouponDetail'
+                  referenceV2: '#/definitions/AddEditCouponDetail'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCouponDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCouponDetail'
+                  referenceV2: '#/definitions/AddEditCouponDetail'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: AddEditCouponDetail
+                  isLocal: true
+                  referenceV3: '#/components/schemas/AddEditCouponDetail'
+                  referenceV2: '#/definitions/AddEditCouponDetail'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CouponApi/CouponListGet:
+    operations:
+      Post:
+        tags:
+        - name: CouponApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponModel'
+                  referenceV2: '#/definitions/CouponModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponModel'
+                  referenceV2: '#/definitions/CouponModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponModel'
+                  referenceV2: '#/definitions/CouponModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponModel'
+                  referenceV2: '#/definitions/CouponModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CouponApi/ChangeStatus:
+    operations:
+      Post:
+        tags:
+        - name: CouponApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponStatusModel'
+                  referenceV2: '#/definitions/CouponStatusModel'
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponStatusModel'
+                  referenceV2: '#/definitions/CouponStatusModel'
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponStatusModel'
+                  referenceV2: '#/definitions/CouponStatusModel'
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+                reference:
+                  type: Schema
+                  id: CouponStatusModel
+                  isLocal: true
+                  referenceV3: '#/components/schemas/CouponStatusModel'
+                  referenceV2: '#/definitions/CouponStatusModel'
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CouponApi/DeleteCoupon:
+    operations:
+      Post:
+        tags:
+        - name: CouponApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+        responses:
+          200:
+            description: Success
+            headers: {}
+            content: {}
+            links: {}
+        callbacks: {}
+        security: []
+        servers: []
+    servers: []
+    parameters: []
+  /CouponApi/CouponGet:
+    operations:
+      Post:
+        tags:
+        - name: CouponApi
+        parameters:
+        - name: api-version
+          in: Query
+          description: The requested API version
+          schema:
+            type: string
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+          examples: {}
+          content: {}
+        requestBody:
+          content:
+            application/json-patch+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            text/json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
+              examples: {}
+              encoding: {}
+            application/*+json:
+              schema:
+                type: integer
+                format: int32
+                allOf: []
+                oneOf: []
+                anyOf: []
+                required: []
+                properties: {}
+                additionalPropertiesAllowed: true
+                enum: []
               examples: {}
               encoding: {}
         responses:
@@ -905,6 +3324,989 @@ components:
           format: password
           maxLength: 100
           minLength: 5
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+    DataTableOrder:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        column:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        dir:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    DataTableSearch:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        value:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        regex:
+          type: boolean
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+    DataTableColumn:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        data:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        name:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        searchable:
+          type: boolean
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        orderable:
+          type: boolean
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        search:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableSearch
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableSearch'
+              referenceV2: '#/definitions/DataTableSearch'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    DataTableRequest:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        draw:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        start:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        length:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        order:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableOrder
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableOrder'
+              referenceV2: '#/definitions/DataTableOrder'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        columns:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableColumn
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableColumn'
+              referenceV2: '#/definitions/DataTableColumn'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        search:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableSearch
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableSearch'
+              referenceV2: '#/definitions/DataTableSearch'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    ForumModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        request:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableRequest
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableRequest'
+              referenceV2: '#/definitions/DataTableRequest'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        forumsList:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: ForumModel
+              isLocal: true
+              referenceV3: '#/components/schemas/ForumModel'
+              referenceV2: '#/definitions/ForumModel'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    AddEditForumDetail:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        id:
+          type: string
+          format: uuid
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        name:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    ForumStatusModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - id
+      - statusId
+      properties:
+        id:
+          type: string
+          format: uuid
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        statusId:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+    RoleModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        request:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableRequest
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableRequest'
+              referenceV2: '#/definitions/DataTableRequest'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        rolesList:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: RoleModel
+              isLocal: true
+              referenceV3: '#/components/schemas/RoleModel'
+              referenceV2: '#/definitions/RoleModel'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    AddEditRoleDetail:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - name
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        name:
+          type: string
+          maxLength: 500
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        description:
+          type: string
+          maxLength: 10000
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    RoleStatusModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - id
+      - statusId
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        statusId:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+    AddEditStoreDetail:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - name
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        name:
+          type: string
+          maxLength: 500
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        description:
+          type: string
+          maxLength: 10000
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        websiteLink:
+          type: string
+          format: uri
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        storeLogo:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    StoreModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        request:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableRequest
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableRequest'
+              referenceV2: '#/definitions/DataTableRequest'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        storesList:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: StoreModel
+              isLocal: true
+              referenceV3: '#/components/schemas/StoreModel'
+              referenceV2: '#/definitions/StoreModel'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    StoreStatusModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - id
+      - statusId
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        statusId:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+    AddEditCategoryDetail:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - name
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        name:
+          type: string
+          maxLength: 500
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        description:
+          type: string
+          maxLength: 10000
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    CategoryModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        request:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableRequest
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableRequest'
+              referenceV2: '#/definitions/DataTableRequest'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        categorysList:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: CategoryModel
+              isLocal: true
+              referenceV3: '#/components/schemas/CategoryModel'
+              referenceV2: '#/definitions/CategoryModel'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    CategoryStatusModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - id
+      - statusId
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        statusId:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+      enum: []
+    TextIntValue:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        value:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        text:
+          type: string
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    AddEditCouponDetail:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - couponCode
+      - couponTitle
+      - description
+      - storeId
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        couponTitle:
+          type: string
+          maxLength: 1000
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        couponCode:
+          type: string
+          maxLength: 500
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        couponLink:
+          type: string
+          format: uri
+          maxLength: 10000
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        description:
+          type: string
+          maxLength: 10000
+          minLength: 0
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        storeId:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        couponExpiry:
+          type: string
+          format: date
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        couponExpiryStr:
+          type: string
+          readOnly: true
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        storeList:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: TextIntValue
+              isLocal: true
+              referenceV3: '#/components/schemas/TextIntValue'
+              referenceV2: '#/definitions/TextIntValue'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    CouponModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required: []
+      properties:
+        request:
+          allOf:
+          - allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: DataTableRequest
+              isLocal: true
+              referenceV3: '#/components/schemas/DataTableRequest'
+              referenceV2: '#/definitions/DataTableRequest'
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+        couponsList:
+          type: array
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          items:
+            allOf: []
+            oneOf: []
+            anyOf: []
+            required: []
+            properties: {}
+            additionalPropertiesAllowed: true
+            enum: []
+            reference:
+              type: Schema
+              id: CouponModel
+              isLocal: true
+              referenceV3: '#/components/schemas/CouponModel'
+              referenceV2: '#/definitions/CouponModel'
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+          nullable: true
+      enum: []
+    CouponStatusModel:
+      type: object
+      allOf: []
+      oneOf: []
+      anyOf: []
+      required:
+      - id
+      - statusId
+      properties:
+        id:
+          type: integer
+          format: int32
+          allOf: []
+          oneOf: []
+          anyOf: []
+          required: []
+          properties: {}
+          additionalPropertiesAllowed: true
+          enum: []
+        statusId:
+          type: integer
+          format: int32
           allOf: []
           oneOf: []
           anyOf: []

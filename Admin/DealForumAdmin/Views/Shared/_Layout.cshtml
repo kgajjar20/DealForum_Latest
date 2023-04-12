@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="@Url.Content("~/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- daterange picker -->
+    <link href="@Url.Content("~/AdminLTE/plugins/daterangepicker/daterangepicker.css")" rel="stylesheet" />
     <!--other-->
     <link rel="stylesheet" href="@Url.Content("~/css/site.css")" />
 
@@ -36,6 +38,9 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a asp-action="Login" asp-controller="Home" asp-area="Admin" class="nav-link">Admin Panel</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a asp-action="Index" asp-controller="Home" class="nav-link">Dashboard</a>
@@ -218,7 +223,6 @@
 
         $(".nav-link").click(function () {
             if ($(this).parent('li').parent('ul.nav-treeview').length > 0) {
-                debugger;
                 $(this).addClass('active');
                 var treeViewLength = $(this).parent('li').parent('ul.nav-treeview').parent('li.has-treeview').length;
                 if (treeViewLength != null && treeViewLength !== undefined && treeViewLength > 0) {

@@ -1,0 +1,345 @@
+﻿@using DealForumLibrary.Models;
+
+@model DealForumLibrary.Models.CouponModel
+
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery AntiForgery;
+@{
+    ViewData["Title"] = "Coupons";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutMain.cshtml";
+}
+
+<head>
+    <!-- DataTables -->
+    <link href="@Url.Content("~/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css")" rel="stylesheet" />
+
+    <!-- DataTables -->
+    <script src="@Url.Content("~/AdminLTE/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/AdminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js")"></script>
+    <script src="@Url.Content("~/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js")"></script>
+    <script src="@Url.Content("~/AdminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js")"></script>
+    <script src="@Url.Content("~/js/Custom/datatableCommon.js")"></script>
+</head>
+
+<div class="modal fade bd-example-modal-lg" id="AddCouponModel" tabindex="-1" Coupon="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg modal-dialog-centered model">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formHeader">Add Coupon</h5>
+                <button type="button" class="close" data-dismiss="modal" id="CloseForm" title="Close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body clearfix pb-0" id="divModelContent">
+                @{
+                    await Html.RenderPartialAsync("_RequestCoupon", new AddEditCouponDetail());
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Coupons</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Coupon Management</a></li>
+                    <li class="breadcrumb-item active">Coupons</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+                <!-- /.card -->
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-md-6">
+                            <h3 class="card-title">DataTable with default features</h3>
+                        </div>
+                        <div class="col-md-6 float-right">
+                            <button type="button" class="btn btn-link text-secondary float-right" data-toggle="modal" data-target="#AddCouponModel" onclick="AddCoupon()" title="Add Coupon">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    @Html.AntiForgeryToken()
+                                    <table id="tblCoupon" class="table table-bordered table-striped dataTable dtr-inline" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th width="15%">Coupon Title</th>
+                                                <th width="15%">Coupon Code</th>
+                                                <th width="15%">Coupon Link</th>
+                                                <th width="15%">Description</th>
+                                                <th width="15%">Store</th>
+                                                <th width="10%">Expiry Date</th>
+                                                <th width="5%">Status</th>
+                                                <th width="10%">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+
+<script src="@Url.Content("~/js/Custom/Common.js")"></script>
+
+<script type="text/javascript">
+
+    var CouponDataTable = null;
+    $(function () {
+        CouponDataTable = $("#tblCoupon").DataTable({
+            "ajax": {
+                "url": _BaseUrl + "Admin/Coupon/GetCouponsList",
+                "type": "post",
+                "headers": { "MY-XSRF-TOKEN": $('input[name="__RequestVerificationToken"]').val() }
+            },
+            'columnDefs': [
+                { "defaultContent": "-", "targets": "_all" },
+                {
+                    'targets': [8], // column index (start from 0)
+                    'orderable': false, // set orderable false for selected columns
+                }
+            ],
+            "columns": [
+                { "data": "Id", "visible": false, "searchable": false, "orderable": false },
+                { "data": "CouponTitle" },
+                { "data": "CouponCode" },
+                {
+                    "data": "CouponLink",
+                    "defaultContent": "-",
+                    "mRender": function (data, type, row) {
+                        if (row["CouponLink"] != null) {
+                            return "<a class='text-primary mr-2' href='Javascript:void(0);'  onclick='OpenWebsite(this)' data-website=" + row["CouponLink"] + "  title=" + row["CouponLink"] + ">" + (row["CouponLink"]).slice(0, 20) + "...</a>";
+                        }
+                        else {
+                            return "-";
+                        }
+
+                    }
+                },
+                { "data": "Description" },
+                { "data": "StoreName" },
+                { "data": "CouponExpiryStr" },
+                {
+                    "data": "Status",
+                    "defaultContent": "",
+                    "mRender": function (data, type, row) {
+                        if (row["Status"] == 1) {
+                            return "<div class='custom-control custom-switch'>"
+                                + "<input type='checkbox' checked data-id='" + row["Id"] + "' id='cs-" + row["Id"] + "' checked='checked' onchange='ChangeStatus(this,0)' class='custom-control-input' id='customSwitch1'>"
+                                + "<label class='custom-control-label' for='cs-" + row["Id"] + "'></label></div>";
+                        }
+                        else {
+                            return "<div class='custom-control custom-switch'><input type='checkbox' data-id='" + row["Id"] + "' id='cs-" + row["Id"] + "'  onchange='ChangeStatus(this,1)' class='custom-control-input' id='customSwitch1'><label class='custom-control-label' for='cs-" + row["Id"] + "'></label></div>";
+                        }
+                    }
+                },
+                {
+                    "defaultContent": "",
+                    "mRender": function (data, type, row) {
+                        return '<a class="text-primary mr-2" href="Javascript:void(0);" onclick="RequestCoupon(this)"  data-id="' + row["Id"] + '" title="Edit"><i class="fas fa-pencil-alt"></i></a>'
+                            + '<a class="text-danger mr-2" href="Javascript:void(0);" data-id="' + row["Id"] + '" onclick="DeleteCoupon(this)" title="Delete"><i class="far fa-trash-alt"></i></a>'
+                            + '<a class="text-primary" style="cursor: pointer" href="Javascript:void(0);"  data-copytext="' + row["CouponLink"] + '" onclick="CopyLink(this)" title="Copy Link"><i class="fa fa-clone"></i></a>';
+                    }
+                }
+
+            ]
+        });
+
+        $('.dataTables_filter input')
+            .off()
+            .on('keyup', function (e) {
+                if (e.keyCode == 13) /* if enter is pressed */ {
+                    CouponDataTable.search(this.value.trim(), false, false).draw();
+                }
+            });
+    });
+
+
+
+    function SaveCoupon() {
+        var form = $('#frmAddUpdateCoupon');
+        $.validator.unobtrusive.parse(form);
+        form.validate();
+        if (form.valid()) {
+            $("#frmAddUpdateCoupon").ajaxSubmit({
+                target: "",
+                type: "POST",
+                success: function (res) {
+                    if (res.result === true) {
+                        $('#CloseForm').click();
+                        success(res.message);
+                        $('#tblCoupon').DataTable().ajax.reload();
+                    }
+                    else {
+                        if (res.message !== null && res.message !== undefined && res.message !== '') {
+                            error(res.message);
+                        }
+                        else { error("Some error has been occured."); }
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    var errorMessage = jqXHR.status + ': ' + jqXHR.statusText
+                    error('Error - ' + errorMessage);
+                }
+            });
+        }
+    }
+
+    function Clearform() {
+        $("#frmAddUpdateCoupon").closest('form').find("input[type=text], textarea").val("");
+    }
+
+    function AddCoupon() {
+        Clearform();
+        $('#formHeader').html('Add Coupon');
+        $.ajax({
+            url: _BaseUrl + 'Admin/Coupon/AddCoupon',
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                if (data !== null) {
+                    $("#divModelContent").html(data);
+                } else {
+                    $('#CloseForm').click();
+                    error('SOMETHING WENT WRONG!');
+                }
+            },
+            error: function (e) {
+                $('#CloseForm').click();
+                error('SOMETHING WENT WRONG!');
+            }
+        });
+    }
+
+    function RequestCoupon(ele) {
+        var id = $(ele).data("id");
+
+        $.ajax({
+            headers: { "MY-XSRF-TOKEN": $('input[name="__RequestVerificationToken"]').val() },
+            url: _BaseUrl + 'Admin/Coupon/EditCoupon',
+            type: 'POST',
+            data: JSON.stringify({ Id: id }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (resp) {
+                $("#divModelContent").html(resp);
+                $("#AddCouponModel").modal('show');
+            },
+            error: function (e) {
+                error('Something went wrong, please try after sometime!');
+            }
+        });
+    }
+
+    function DeleteCoupon(ele) {
+        event.preventDefault();
+        var id = $(ele).data("id");
+        var ischek = false;
+        strconfirm = "Are you sure you want to delete selected Coupon?";
+        if (confirm(strconfirm)) {
+            $.ajax({
+                headers: { "MY-XSRF-TOKEN": $('input[name="__RequestVerificationToken"]').val() },
+                url: _BaseUrl + 'Admin/Coupon/DeleteCoupon',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ "Id": id }),
+                success: function (res) {
+                    if (res.result === true) {
+                        success(res.message);
+                        $('#tblCoupon').DataTable().ajax.reload();
+                    }
+                    else {
+                        if (res.message !== null && res.message !== undefined && res.message !== '') {
+                            error(res.message);
+                        }
+                        else { error("Some error has been occured."); }
+                    }
+                },
+                error: function (e) {
+                    $("#" + id).prop("checked", ischek);
+                    error('Something went wrong!');
+                    return false;
+                }
+            });
+        }
+        else {
+            return false;
+        }
+    }
+
+    function ChangeStatus(ele, sts) {
+        event.preventDefault();
+        var id = $(ele).data("id");
+        var strconfirm = "";
+        var ischek = false;
+        if (sts === 0) {
+            strconfirm = "Are you sure you want to inactive selected Coupon?";
+            ischek = true;
+        }
+        else {
+            strconfirm = "Are you sure you want to active selected Coupon?";
+            ischek = false;
+        }
+        if (confirm(strconfirm)) {
+            $.ajax({
+                headers: { "MY-XSRF-TOKEN": $('input[name="__RequestVerificationToken"]').val() },
+                url: _BaseUrl + 'Admin/Coupon/ChangeStatus',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ ID: id, StatusId: sts }),
+                success: function (res) {
+                    if (res.result === true) {
+                        success(res.message);
+                        $('#tblCoupon').DataTable().ajax.reload();
+                    }
+                    else {
+                        if (res.message !== null && res.message !== undefined && res.message !== '') {
+                            error(res.message);
+                        }
+                        else { error("Some error has been occured."); }
+                        $("#" + id).prop("checked", ischek);
+                    }
+                },
+                error: function (e) {
+                    $("#" + id).prop("checked", ischek);
+                    error('Something went wrong!');
+                    return false;
+                }
+            });
+        }
+        else {
+            var id = $(ele).attr('id');
+            $("#" + id).prop("checked", ischek);
+            return false;
+        }
+    }
+
+
+</script>

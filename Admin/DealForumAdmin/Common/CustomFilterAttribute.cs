@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DealForumLibrary.EnumHelper;
+using DealForumLibrary;
 using System.IO;
 using Newtonsoft.Json;
 using System.Net;

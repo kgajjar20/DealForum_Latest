@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DealForumAdmin.Models;
 using Microsoft.AspNetCore.Authorization;
+using DealForum.Common;
 
 namespace DealForumAdmin.Controllers
 {
@@ -44,6 +45,11 @@ namespace DealForumAdmin.Controllers
         public IActionResult Login(string s = null)
         {
             return RedirectToAction("Index");
+        }
+
+        public IActionResult ForgorPassword()
+        {
+            return View();
         }
 
 

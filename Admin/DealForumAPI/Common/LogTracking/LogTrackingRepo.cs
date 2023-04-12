@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DealForumLibrary;
 using Microsoft.EntityFrameworkCore;
-using DealForumLibrary.EnumHelper;
+using DealForumLibrary;
 
 namespace DealForumAPI.Common.LogTracking
 {

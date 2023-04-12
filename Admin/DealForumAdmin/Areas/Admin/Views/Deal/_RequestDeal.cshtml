@@ -1,0 +1,104 @@
+﻿@model DealForumLibrary.Models.AdminAreaModels.AddEditDealDetail
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    string ButtonName = "Save";
+    if (Model.Id != null && Model.Id != Guid.Empty)
+    {
+        ButtonName = "Update";
+    }
+}
+
+@using (Html.BeginForm("AddUpdateDeal", "Deal", FormMethod.Post, new { @id = "frmAddUpdateDeal", @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    <div class="row gutter-20">
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Forum<span class="required">*</span></label>
+                @Html.DropDownListFor(m => m.ForumId, new SelectList(Model.ForumList, "Value", "Text"), "--Select--", new { @class = "form-control ddlStore" })
+                @Html.ValidationMessageFor(a => a.ForumId, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Deal Link</label>
+                @Html.TextBoxFor(m => m.DealLink, new { @class = "form-control urlMask" })
+                @Html.ValidationMessageFor(a => a.DealLink, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Deal Title<span class="required">*</span></label>
+                @Html.TextBoxFor(m => m.DealTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.DealTitle, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Description<span class="required">*</span></label>
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Description, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="">Deal Price<span class="required">*</span></label>
+                @Html.TextBoxFor(m => m.DealPrice, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.DealPrice, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="">Retail Price<span class="required">*</span></label>
+                @Html.TextBoxFor(m => m.RetailPrice, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.RetailPrice, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="">Deal Start Date</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" asp-for="DealStartDate" value="@Model.DealStartDate" class="form-control dateMask" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(a => a.DealStartDate, "", new { @style = "color:red" })
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="">Deal Expiry Date</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" asp-for="DealExpiryDate" value="@Model.DealExpiryDate" class="form-control dateMask" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(a => a.DealExpiryDate, "", new { @style = "color:red" })
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="btnSave" class="btn btn-primary btn-sm mtp5" onclick="SaveDeal();" title="@ButtonName">@ButtonName</button>
+        <button type="button" class="btn btn-secondary btn-sm mtp5" data-dismiss="modal" title="Cancel">Cancel</button>
+    </div>
+}
+
+<script>
+    $(function () {
+        DateMask();
+    });
+</script>

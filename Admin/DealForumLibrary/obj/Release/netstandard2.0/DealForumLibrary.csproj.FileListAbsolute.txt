@@ -1,0 +1,9 @@
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\bin\Release\netstandard2.0\DealForumLibrary.deps.json
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\bin\Release\netstandard2.0\DealForumLibrary.dll
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\bin\Release\netstandard2.0\DealForumLibrary.pdb
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\obj\Release\netstandard2.0\DealForumLibrary.csprojAssemblyReference.cache
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\obj\Release\netstandard2.0\DealForumLibrary.AssemblyInfoInputs.cache
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\obj\Release\netstandard2.0\DealForumLibrary.AssemblyInfo.cs
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\obj\Release\netstandard2.0\DealForumLibrary.csproj.CoreCompileInputs.cache
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\obj\Release\netstandard2.0\DealForumLibrary.dll
+D:\Web Development\Projects\DealForum\Admin\DealForumLibrary\obj\Release\netstandard2.0\DealForumLibrary.pdb

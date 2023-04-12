@@ -33,6 +33,9 @@ namespace DealForumAPI.DB
         [Column("siteurl")]
         [StringLength(500)]
         public string Siteurl { get; set; }
+        [Column("apibaseurl")]
+        [StringLength(500)]
+        public string Apibaseurl { get; set; }
         [Column("createdby")]
         public Guid? Createdby { get; set; }
         [Column("createddate", TypeName = "datetime")]

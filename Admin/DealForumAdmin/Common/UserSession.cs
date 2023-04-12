@@ -199,6 +199,36 @@ namespace DealForum.Common
 
         }
 
+        public static string ProfilePhoto
+        {
+            get
+            {
+                if (HttpContext.Session.GetString("ProfilePhoto") == null)
+                    return null;
+                else
+                    return HttpContext.Session.GetString("ProfilePhoto");
+            }
+            set
+            {
+                value = !string.IsNullOrWhiteSpace(value) ? value : string.Empty;
+                HttpContext.Session.SetString("ProfilePhoto", value);
+            }
+        }
+
+        public static byte[] ProfilePhotoByte
+        {
+            get
+            {
+                if (HttpContext.Session.GetObject<byte[]>("ProfilePhotoByte") == null)
+                    return null;
+                else
+                    return HttpContext.Session.GetObject<byte[]>("ProfilePhotoByte");
+            }
+            set
+            {
+                HttpContext.Session.SetObject("ProfilePhotoByte", value);
+            }
+        }
 
     }
 }

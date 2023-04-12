@@ -20,9 +20,24 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:DealForumAPI.Resources.AdminResource.ContactAdminToDelete">
+            <summary>
+              Looks up a localized string similar to Please contact administrator to delete this {0}..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.AdminResource.ContactAdminToUpdate">
+            <summary>
+              Looks up a localized string similar to Please contact administrator to update {0}..
+            </summary>
+        </member>
         <member name="P:DealForumAPI.Resources.AdminResource.DoesNotExistForAdminPortalLogin">
             <summary>
               Looks up a localized string similar to User does not exist or not active for Admin Portal Login..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.AdminResource.RoleIsInUse">
+            <summary>
+              Looks up a localized string similar to Role is in use.Contact administrator to delete..
             </summary>
         </member>
         <member name="T:DealForumAPI.Resources.SharedResource">
@@ -41,9 +56,34 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.Activated">
+            <summary>
+              Looks up a localized string similar to {0} has been activated successfully..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.Added">
+            <summary>
+              Looks up a localized string similar to {0} has been added successfully..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.AlreadyExist">
+            <summary>
+              Looks up a localized string similar to {0} already exist..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.Deleted">
+            <summary>
+              Looks up a localized string similar to {0} has been deleted successfully..
+            </summary>
+        </member>
         <member name="P:DealForumAPI.Resources.SharedResource.Error">
             <summary>
               Looks up a localized string similar to Some error occurred.Please try again later..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.InActivated">
+            <summary>
+              Looks up a localized string similar to {0} has been inactivated successfully..
             </summary>
         </member>
         <member name="P:DealForumAPI.Resources.SharedResource.InvalidEmailOrPassword">
@@ -59,6 +99,26 @@
         <member name="P:DealForumAPI.Resources.SharedResource.NotExist">
             <summary>
               Looks up a localized string similar to {0} does not exist..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.NotFound">
+            <summary>
+              Looks up a localized string similar to {0} not found..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.NotValid">
+            <summary>
+              Looks up a localized string similar to {0} is not valid..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.RequestCannotNull">
+            <summary>
+              Looks up a localized string similar to Request cannot null..
+            </summary>
+        </member>
+        <member name="P:DealForumAPI.Resources.SharedResource.Updated">
+            <summary>
+              Looks up a localized string similar to {0} has been updated successfully..
             </summary>
         </member>
         <member name="T:RestApi.Example.Utils.Swagger.ConfigureSwaggerGenOptions">

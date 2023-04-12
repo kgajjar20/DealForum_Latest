@@ -1,0 +1,83 @@
+﻿@model DealForumLibrary.Models.AddEditCouponDetail
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    string ButtonName = "Save";
+    if (Model.Id != null && Model.Id > 0)
+    {
+        ButtonName = "Update";
+    }
+}
+
+@using (Html.BeginForm("AddUpdateCoupon", "Coupon", FormMethod.Post, new { @id = "frmAddUpdateCoupon", @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    <div class="row gutter-20">
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Store Name<span class="required">*</span></label>
+                @Html.DropDownListFor(m => m.StoreId, new SelectList(Model.StoreList, "Value", "Text"), "--Select--", new { @class = "form-control ddlStore" })
+                @Html.ValidationMessageFor(a => a.StoreId, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Coupon Link</label>
+                @Html.TextBoxFor(m => m.CouponLink, new { @class = "form-control urlMask" })
+                @Html.ValidationMessageFor(a => a.CouponLink, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Coupon Code<span class="required">*</span></label>
+                @Html.TextBoxFor(m => m.CouponCode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.CouponCode, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Coupon Title<span class="required">*</span></label>
+                @Html.TextBoxFor(m => m.CouponTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.CouponTitle, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Description<span class="required">*</span></label>
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Description, "", new { @style = "color:red" })
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Coupon Expiry</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" asp-for="CouponExpiry" value="@Model.CouponExpiry" class="form-control dateMask" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(a => a.CouponExpiry, "", new { @style = "color:red" })
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="btnSave" class="btn btn-primary btn-sm mtp5" onclick="SaveCoupon();" title="@ButtonName">@ButtonName</button>
+        <button type="button" class="btn btn-secondary btn-sm mtp5" data-dismiss="modal" title="Cancel">Cancel</button>
+    </div>
+}
+
+<script>
+    $(function () {
+        DateMask();
+    });
+</script>

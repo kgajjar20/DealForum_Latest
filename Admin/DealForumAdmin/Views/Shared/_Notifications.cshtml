@@ -2,7 +2,7 @@
     $(document).ready(function ()
     {
         @using DealForum.Common
-        @using DealForumLibrary.EnumHelper
+        @using DealForumLibrary
         @{
             var errorList = Html.GetNotifications(NotificationType.ERROR);
             var warningList = Html.GetNotifications(NotificationType.WARNING);

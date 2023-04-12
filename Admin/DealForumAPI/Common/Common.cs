@@ -13,6 +13,7 @@ namespace DealForumAPI.Common
         public const string AuthorizationHeader = "Authorization";
         public const string MobileData = "MobileData";
         public const string ClaimUserType = System.Security.Claims.ClaimTypes.Role;
+        public const string PortalTypeClaim = "PortalType";
         public const string RequestedApp = "ClientId";
 
         public enum APITrackingType : int
@@ -30,7 +31,8 @@ namespace DealForumAPI.Common
             VerifyEmail = 11,
             VerifyMenuRights = 12,
             Invitation = 13,
-            FileDownload = 14
+            FileDownload = 14,
+            StatusChange = 15
         }
     }
 }

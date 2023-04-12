@@ -1,0 +1,145 @@
+﻿@model DealForumLibrary.Models.AdminAreaModels.AddEditStoreDetail
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    string ButtonName = "Save";
+    if (Model.Id != null && Model.Id > 0)
+    {
+        ButtonName = "Update";
+    }
+    var defaultImage = Url.Content("~/images/userphotos/profile-photo.png");
+}
+
+@using (Html.BeginForm("AddUpdateStore", "Store", FormMethod.Post, new { @id = "frmAddUpdateStore", @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    <div class="row gutter-20">
+
+        <div class="col-md-12">
+            <div class="userimg form-group">
+                <img src="@Url.Content("~/storeimages/"+Model.StoreLogo)" style="max-height:250px !important;" onerror="this.src='@defaultImage';" alt="" id="ImgId" class="img-fluid mx-auto d-block">
+                @Html.HiddenFor(m => m.StoreLogo)
+            </div>
+
+            <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" id="customfile" name="customfile" class="custom-file-input" onclick="initialize(this)" onchange="ReadFileName(this)">
+                    <label class="custom-file-label" id="lblChooseFile" for="customfile">Choose file</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Store Name<span class="required">*</span></label>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Name, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Description</label>
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Description, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Website Link</label>
+                @Html.TextBoxFor(m => m.WebsiteLink, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.WebsiteLink, "", new { @style = "color:red" })
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="btnSave" class="btn btn-primary btn-sm mtp5" onclick="SaveStore();" title="@ButtonName">@ButtonName</button>
+        <button type="button" class="btn btn-secondary btn-sm mtp5" data-dismiss="modal" title="Cancel">Cancel</button>
+    </div>
+}
+
+
+<script type="text/javascript">
+
+
+    var _validFileExtensions = [".JPEG", ".jpeg", ".JPG", ".jpg", ".png", ".PNG", ".bmp", ".BMP", ".gif", ".GIF", ".tiff", ".TIFF"];
+    function ValidateSingleInput(oInput) {
+        debugger;
+        if (oInput.type == "file") {
+            var sFileName = oInput.value;
+            if (sFileName.length > 0) {
+                var blnValid = false;
+                for (var j = 0; j < _validFileExtensions.length; j++) {
+                    var sCurExtension = _validFileExtensions[j];
+                    if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                        blnValid = true;
+                        break;
+                    }
+                }
+
+                if (!blnValid) {
+                    var ogFileName = sFileName.replace("C:\\fakepath\\", "");
+                    info("Sorry, " + ogFileName + " is invalid, allowed extension are : .jpeg,.jpg,.png,.bmp,.gif,.tiff");
+                    oInput.value = "";
+                     $('#ImgId').attr('src', '@defaultImage');
+                    return false;
+                }
+                else {
+                    var fsize = oInput.files[0].size;
+                    const file = Math.round((fsize / 1024));
+                    if (file > 20480) //20 MB
+                    {
+                        info("Maximum 20 MB image is allowed.");
+                        oInput.value = "";
+                        $('#ImgId').attr('src', '@defaultImage');
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+
+    function ReadFileName(fileInput) {
+        debugger;
+        if (fileInput.files && fileInput.files[0]) {
+            var result = ValidateSingleInput(fileInput);
+            if (result) {
+                var reader = new FileReader();
+                reader.onloadend = function (e) {
+                    $('#ImgId').attr('src', e.target.result);
+                    $("#StoreLogoPath").val($(fileInput).val());
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+        else
+        {
+                $('#ImgId').attr('src', '@defaultImage');
+        }
+    }
+
+    function initialize() {
+        document.body.onfocus = checkIt;
+        console.log('initializing');
+    }
+
+    // Define a function to check if
+    // the user failed to upload file
+    function checkIt() {
+        // Check if the number of files
+        // is not zero
+        var theFile = document.getElementById('customfile');
+        if (theFile.value.length) {
+        }
+        // Alert the user if the number
+        // of file is zero
+        else {
+                $('#ImgId').attr('src', '@defaultImage');
+            }
+        document.body.onfocus = null;
+    }
+
+
+</script>

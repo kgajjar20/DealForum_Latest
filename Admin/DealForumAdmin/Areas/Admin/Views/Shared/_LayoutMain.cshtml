@@ -1,20 +1,26 @@
 ﻿@using DealForum.Common;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Http;
+@using static DealForum.Extensions.UrlExtensions
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
 
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@ViewData["Title"] - DealForum</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href='@Url.AbsoluteContent("~/")'>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="@Url.Content("~/AdminLTE/plugins/fontawesome-free/css/all.min.css")">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="@Url.Content("~/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")">
+    <!-- Loader -->
+    <link href="@Url.Content("~/css/Loader.css")" rel="stylesheet" />
+
     <!-- iCheck -->
     <link rel="stylesheet" href="@Url.Content("~/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css")">
     <!-- Theme style -->
@@ -23,14 +29,88 @@
     <link rel="stylesheet" href="@Url.Content("~/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- daterange picker -->
+    <link href="@Url.Content("~/AdminLTE/plugins/daterangepicker/daterangepicker.css")" rel="stylesheet" />
+    <!-- Toastr -->
+    <link href="@Url.Content("~/AdminLTE/plugins/toastr/toastr.min.css")" rel="stylesheet" />
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link href="~/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
     <!--other-->
     <link rel="stylesheet" href="@Url.Content("~/css/site.css")" />
     <!-- Custom -->
     <link href="@Url.Content("~/css/Custom/stickynotes.css")" rel="stylesheet" />
+
+
+    <link href="@Url.Content("~/css/Custom/Override.css")" rel="stylesheet" />
+
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="@Url.Content("~/AdminLTE/plugins/jquery/jquery.min.js")"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="@Url.Content("~/AdminLTE/plugins/jquery-ui/jquery-ui.min.js")"></script>
+
+    <!-- jQuery Validate-->
+    <script src="@Url.Content("~/lib/jquery-validation/dist/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/lib/jquery-validation/dist/additional-methods.min.js")"></script>
+    <script src="@Url.Content("~/lib/jquery-form/jquery.form.js")"></script>
+
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- daterangepicker -->
+    <script src="@Url.Content("~/AdminLTE/plugins/moment/moment.min.js")"></script>
+    <script src="@Url.Content("~/AdminLTE/plugins/daterangepicker/daterangepicker.js")"></script>
+    <!-- InputMask -->
+    <script src="@Url.Content("~/AdminLTE/plugins/inputmask/min/jquery.inputmask.bundle.min.js")"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="@Url.Content("~/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")"></script>
+    <!-- Summernote -->
+    <script src="@Url.Content("~/AdminLTE/plugins/summernote/summernote-bs4.min.js")"></script>
+    <!-- Toastr -->
+    <script src="@Url.Content("~/AdminLTE/plugins/toastr/toastr.min.js")"></script>
+    <!-- overlayScrollbars -->
+    <script src="@Url.Content("~/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")"></script>
+    <!-- Custom-->
+    <script src="@Url.Content("~/js/Custom/stickynotes.js")"></script>
+    <script src="@Url.Content("~/js/Custom/Common.js")"></script>
+
+    <script>
+        var _BaseUrl;
+        $(function () {
+            _BaseUrl = document.baseURI;
+        });
+    </script>
 </head>
 
-<body class="sidebar-mini layout-navbar-fixed" style="height: auto;">
-    <div class="wrapper">
+
+@{
+    var profilePhoto = "";
+    if (!string.IsNullOrEmpty(UserSession.ProfilePhoto))
+    {
+        profilePhoto = Url.Content("~/images/userphotos/" + UserSession.ProfilePhoto);
+    }
+    else
+    {
+        profilePhoto = Url.Content("~/images/userphotos/profile-photo.png");
+    }
+
+}
+
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Loader -->
+    <div class="loader" style="display:none">
+        <div class="col-md-12">Please wait while we process your request...</div>
+    </div>
+    <!-- End Loader -->
+    <!-- Site wrapper -->
+    <div class="wrapper" id="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -87,14 +167,14 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown user-menu">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="@Url.Content("~/AdminLTE/dist/img/user2-160x160.jpg")" class="user-image img-circle elevation-2" alt="User Image">
-                        <span class="d-none d-md-inline">Alexander Pierce</span>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <img src="@profilePhoto" class="user-image img-circle elevation-2" alt="User Image">
+                        <span class="d-none d-md-inline">@UserSession.FirstName @UserSession.LastName</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
+                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-primary">
-                            <img src="@Url.Content("~/AdminLTE/dist/img/user2-160x160.jpg")" class="img-circle elevation-2" alt="User Image">
+                            <img src="@profilePhoto" class="img-circle elevation-2" alt="User Image">
 
                             <p>
                                 @UserSession.FirstName @UserSession.LastName - @UserSession.RoleName
@@ -147,7 +227,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="@Url.Content("~/AdminLTE/dist/img/user2-160x160.jpg")" class="img-circle elevation-2" alt="User Image">
+                        <img src="@profilePhoto" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">@UserSession.FirstName @UserSession.LastName</a>
@@ -202,54 +282,60 @@
             <!-- /.sidebar -->
         </aside>
 
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @RenderBody()
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
         </div>
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Copyright &copy; @DateTime.Now.Year <a href="#">Deal Forum</a>.</strong> All rights
+            reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-    <!-- jQuery -->
-    <script src="@Url.Content("~/AdminLTE/plugins/jquery/jquery.min.js")"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="@Url.Content("~/AdminLTE/plugins/jquery-ui/jquery-ui.min.js")"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
-    </script>
     <!-- Bootstrap 4 -->
     <script src="@Url.Content("~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js")"></script>
-    <!-- daterangepicker -->
-    <script src="@Url.Content("~/AdminLTE/plugins/moment/moment.min.js")"></script>
-    <script src="@Url.Content("~/AdminLTE/plugins/daterangepicker/daterangepicker.js")"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="@Url.Content("~/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")"></script>
-    <!-- Summernote -->
-    <script src="~/AdminLTE/plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="@Url.Content("~/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")"></script>
     <!-- AdminLTE App -->
-    <script src="@Url.Content("~/AdminLTE/dist/js/adminlte.js")"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="@Url.Content("~/AdminLTE/dist/js/adminlte.min.js")"></script>
     <!-- AdminLTE for demo purposes -->
-    <!-- Custom-->
-    <script src="@Url.Content("~/js/Custom/stickynotes.js")"></script>
-    <script src="@Url.Content("~/js/Custom/Common.js")"></script>
+    <script src="~/AdminLTE/dist/js/demo.js"></script>
 
-
-    <div id="_NotificationShare">
-        <partial name="_Notifications" />
-    </div>
 </body>
+
 </html>
 
 <script>
 
+    function ShowLoader() {
+        $('.loader').show();
+        $("#wrapper").css("filter", "blur(2px)");
+    }
+
+    function HideLoader() {
+        $('.loader').hide();
+        $("#wrapper").css("filter", "blur(0px)");
+    }
+
+
     $(document).ready(function () {
+
+        $(document).ajaxStart(function () {
+            ShowLoader();
+        }).ajaxStop(function () {
+            HideLoader();
+        });
+
 
         $(function () {
             $('.nav li>a').removeClass('active');
@@ -258,7 +344,6 @@
 
         $(".nav-link").click(function () {
             if ($(this).parent('li').parent('ul.nav-treeview').length > 0) {
-                debugger;
                 $(this).addClass('active');
                 var treeViewLength = $(this).parent('li').parent('ul.nav-treeview').parent('li.has-treeview').length;
                 if (treeViewLength != null && treeViewLength !== undefined && treeViewLength > 0) {

@@ -61,11 +61,38 @@ namespace DealForumAPI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please contact administrator to delete this {0}..
+        /// </summary>
+        public static string ContactAdminToDelete {
+            get {
+                return ResourceManager.GetString("ContactAdminToDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please contact administrator to update {0}..
+        /// </summary>
+        public static string ContactAdminToUpdate {
+            get {
+                return ResourceManager.GetString("ContactAdminToUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User does not exist or not active for Admin Portal Login..
         /// </summary>
         public static string DoesNotExistForAdminPortalLogin {
             get {
                 return ResourceManager.GetString("DoesNotExistForAdminPortalLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role is in use.Contact administrator to delete..
+        /// </summary>
+        public static string RoleIsInUse {
+            get {
+                return ResourceManager.GetString("RoleIsInUse", resourceCulture);
             }
         }
     }

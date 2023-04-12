@@ -8,7 +8,7 @@ namespace DealForumLibrary.Models.AdminAreaModels
     public class AdminLoginModel
     {
         [Required(ErrorMessage = "Email is required.")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage ="Email is not valid.")]
         public string Email { get; set; }
 
 
@@ -20,4 +20,12 @@ namespace DealForumLibrary.Models.AdminAreaModels
         public string Password { get; set; }
 
     }
+
+    public class AdminForgotPasswordModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Email is not valid.")]
+        public string Email { get; set; }
+    }
+
 }

@@ -18,10 +18,17 @@ namespace DealForumAPI.DB
         public virtual DbSet<Apiactiontracking> Apiactiontracking { get; set; }
         public virtual DbSet<Apiexceptiontracking> Apiexceptiontracking { get; set; }
         public virtual DbSet<Apilogtracking> Apilogtracking { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Commonsetting> Commonsetting { get; set; }
+        public virtual DbSet<Coupon> Coupon { get; set; }
+        public virtual DbSet<Couponcategory> Couponcategory { get; set; }
+        public virtual DbSet<Deal> Deal { get; set; }
+        public virtual DbSet<Dealcategory> Dealcategory { get; set; }
+        public virtual DbSet<Forum> Forum { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Roleprivilege> Roleprivilege { get; set; }
+        public virtual DbSet<Store> Store { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Usermapping> Usermapping { get; set; }
 
@@ -29,8 +36,6 @@ namespace DealForumAPI.DB
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=192.168.43.91;Database=DealForum;Trusted_Connection=True;Integrated Security=False;uid=sa;pwd=Kaushal#123;MultipleActiveResultSets=True");
             }
         }
 
@@ -54,6 +59,42 @@ namespace DealForumAPI.DB
                     .WithMany(p => p.Apiexceptiontracking)
                     .HasForeignKey(d => d.Userid)
                     .HasConstraintName("FK_Apiexceptiontracking_userid__user_id");
+            });
+
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.Property(e => e.Status).HasDefaultValueSql("((1))");
+            });
+
+            modelBuilder.Entity<Coupon>(entity =>
+            {
+                entity.Property(e => e.Status).HasDefaultValueSql("((1))");
+            });
+
+            modelBuilder.Entity<Couponcategory>(entity =>
+            {
+                entity.HasNoKey();
+            });
+
+            modelBuilder.Entity<Deal>(entity =>
+            {
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.Status).HasDefaultValueSql("((1))");
+            });
+
+            modelBuilder.Entity<Dealcategory>(entity =>
+            {
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+            });
+
+            modelBuilder.Entity<Forum>(entity =>
+            {
+                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.Forumname).IsUnicode(false);
+
+                entity.Property(e => e.Status).HasDefaultValueSql("((1))");
             });
 
             modelBuilder.Entity<Menu>(entity =>
@@ -92,6 +133,11 @@ namespace DealForumAPI.DB
                     .HasForeignKey(d => d.Roleid)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_roleprivilege_roleid__role_id");
+            });
+
+            modelBuilder.Entity<Store>(entity =>
+            {
+                entity.Property(e => e.Status).HasDefaultValueSql("((1))");
             });
 
             modelBuilder.Entity<User>(entity =>

@@ -23,5 +23,7 @@ namespace DealForumLibrary.Models.AdminAreaModels
         public string RoleName { get; set; }
         public bool IsAdmin { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public string ProfilePhoto { get; set; }
+        public byte[] ProfilePhotoByte { get; set; }
     }
 }
